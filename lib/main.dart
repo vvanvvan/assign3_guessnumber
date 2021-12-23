@@ -7,7 +7,6 @@ import 'game.dart';
 void main() {
   const maxRandom = 100;
 
-  var num_correct = new Game();
   var game = Game();
   var answer = game.myanswer;
   var guessCount = 0;
@@ -56,19 +55,22 @@ void playGame() {
   var isPlay = false;
 
   do {
-    if (isPlay == false) {
+
       stdout.write('Play again? (Y/N): ');
       var playagain = stdin.readLineSync();
 
       if (playagain == 'Y' || playagain == 'y') {
+        isPlay = true;
         main();
       } else if (playagain == 'N' || playagain == 'n') {
         isPlay = true;
         print('❆ Merry⭐ Christmas ❆');
         print('❤❤❤❤ Goodbye☁, Have a nice day! ❤❤❤❤');
-
-        ////break;
+      } else {
+        continue;
       }
-    }
+
   } while (!isPlay);
+
+
 }
