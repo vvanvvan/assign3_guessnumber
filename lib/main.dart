@@ -11,7 +11,7 @@ playGame() {
   var guessCount = 0;
   var isCorrect = false;
 
-  print('answer is $answer');
+  ////print('answer is $answer');
 
   print('╔════════════════════════════════════════');
   print('║            GUESS THE NUMBER            ');
