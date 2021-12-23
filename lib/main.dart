@@ -4,9 +4,8 @@ import 'dart:io';
 import 'dart:math';
 import 'game.dart';
 
-void main() {
+playGame() {
   const maxRandom = 100;
-
   var game = Game();
   var answer = game.myanswer;
   var guessCount = 0;
@@ -40,37 +39,32 @@ void main() {
       print('║ ➜ $guess is CORRECT 💙, total guesses: $guessCount');
       print('╟────────────────────────────────────────');
       isCorrect = true;
+
     }
   } while (!isCorrect);
-
   print('║                 THE END                ');
   print('╚════════════════════════════════════════');
 
-  if (isCorrect == true) {
-    playGame();
-  }
 }
 
-void playGame() {
+void main() {
   var isPlay = false;
+  playGame();
 
-  do {
+  do{
 
       stdout.write('Play again? (Y/N): ');
       var playagain = stdin.readLineSync();
 
       if (playagain == 'Y' || playagain == 'y') {
-        isPlay = true;
-        main();
+        playGame();
       } else if (playagain == 'N' || playagain == 'n') {
         isPlay = true;
         print('❆ Merry⭐ Christmas ❆');
         print('❤❤❤❤ Goodbye☁, Have a nice day! ❤❤❤❤');
-      } else {
-        continue;
       }
 
-  } while (!isPlay);
+  }while (!isPlay);
 
 
 }
